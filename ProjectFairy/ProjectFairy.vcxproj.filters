@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{71463844-412f-454a-aaa1-35f955c58045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Simulation">
+      <UniqueIdentifier>{b4a7d3f7-11a7-4131-97ef-b737f3d3c0c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{b36acdab-2dd8-48dd-8b82-6d43b4f013db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{2c94cd58-013e-4113-9cbe-0cd5cbda1103}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\AnimatedSprite.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\AudioManager.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\FontManager.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\ResourceManager.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\Sprite.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Rect2f.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Vector2f.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\Game.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\Button.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\Label.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\Menu.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\Screen.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\ScreenDefs.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\Widget.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\ModContentManager.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\Actor.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\ActorData.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\Player.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\Projectile.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\ProjectileData.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\StageData.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\Effect.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Simulation\EffectData.cpp">
+      <Filter>Source Files\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\InputManager.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Circle2f.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\ThumbStick.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\ManaBar.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UI\PlayerHealth.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\pch.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Core\AnimatedSprite.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Core\AudioManager.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Core\FontManager.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Core\ResourceManager.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Core\Sprite.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Rect2f.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Vector2f.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\Game.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\Button.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\Label.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\Menu.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\Screen.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\ScreenDefs.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\Widget.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\ModContentManager.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\Actor.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\ActorData.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\Player.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\Projectile.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\ProjectileData.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\StageData.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\Effect.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Simulation\EffectData.h">
+      <Filter>Source Files\Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Core\InputManager.h">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Circle2f.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\ThumbStick.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\ManaBar.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UI\PlayerHealth.h">
+      <Filter>Source Files\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
