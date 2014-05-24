@@ -25,6 +25,7 @@ namespace
 			if( event.type == SDL_QUIT )
 			#endif
 			{
+				SDL_Quit();
 				exit(0);
 			}
 
@@ -60,6 +61,17 @@ namespace
 		}
 	}
 
+	int SDLCALL exitEventFilter(void *userdata, SDL_Event * event)
+	{
+		if (event->type == SDL_APP_WILLENTERBACKGROUND) 
+		{
+			SDL_Quit();
+			exit(0);
+		}
+		// etc
+		return 1;
+	}
+
 }
 
 int main(int argc, char **argv) 
@@ -67,6 +79,7 @@ int main(int argc, char **argv)
 	ResourceManager::Instance();
 	bool done=false;
 	AudioManager::Instance().PlayMusic("The Stage is Set.ogg");
+	SDL_AddEventWatch(exitEventFilter, NULL);
 	while(true)
 	{
 		MainLoop();
