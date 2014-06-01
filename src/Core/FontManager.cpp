@@ -49,3 +49,35 @@ TTF_Font* FontManager::GetFont( std::string name ) const
 	return NULL;
 }
 
+void FontManager::LoadGlyphTable( std::string name, SDL_Color color )
+{
+	TTF_Font* pFont = GetFont(name);
+	char buffer [4];
+	for(int iter = 32; iter<123;++iter)
+	{
+		char a = static_cast<char>(iter);
+		sprintf(buffer,"%c",iter);
+		Sprite* pSprite = new Sprite();
+		pSprite->LoadText(pFont, std::string(buffer),color);
+		mGlyphTable[name][a]=pSprite;
+	}
+}
+
+void FontManager::RenderText( std::string name, std::string text, int x, int y )
+{
+	int posX = x;
+	for(int it = 0; it<text.length();++it)
+	{
+		char c = text[it];
+		mGlyphTable[name][c]->Render(posX,y);
+		posX += mGlyphTable[name][c]->GetWidth();
+	}
+}
+
+void FontManager::InitGlyphTable()
+{
+	SDL_Color white = {255,255,255};
+	LoadGlyphTable("airstrike",white);
+}
+
+

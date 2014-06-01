@@ -77,9 +77,9 @@ namespace
 int main(int argc, char **argv) 
 {
 	ResourceManager::Instance();
-	bool done=false;
 	AudioManager::Instance().PlayMusic("The Stage is Set.ogg");
 	SDL_AddEventWatch(exitEventFilter, NULL);
+	FontManager::Instance().InitGlyphTable();
 	while(true)
 	{
 		MainLoop();
