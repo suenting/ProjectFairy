@@ -37,6 +37,35 @@ namespace
 		}
 		return false;
 	}
+
+	template<typename T>
+	static void UpdateVector(T vec)
+	{
+		for(typename T::iterator it = vec.begin(); it != vec.end();++it)
+		{
+			(*it)->Update();
+		}
+	}
+
+	template<typename T>
+	static void RenderVector(T vec)
+	{
+		for(typename T::const_iterator it = vec.begin(); it != vec.end();++it)
+		{
+			(*it)->Render();
+		}
+	}
+
+	template<typename T>
+	static void ClearVector(T vec)
+	{
+		for(typename T::iterator it = vec.begin(); it != vec.end();++it)
+		{
+			delete (*it);
+		}
+		vec.clear();
+	}
+
 }
 
 Game::Game()
@@ -74,25 +103,14 @@ void Game::Render() const
 		mPlayer.Render();
 
 		// draw effects
-		for(std::vector<Effect*>::const_iterator it = mEffectList.begin(); it != mEffectList.end();++it)
-		{
-			(*it)->Render();
-		}
+		RenderVector< std::vector<Effect*> >(mEffectList);
 
 		// draw projectiles
-		for(std::vector<Projectile*>::const_iterator it = mPlayerProjectiles.begin(); it != mPlayerProjectiles.end();++it)
-		{
-			(*it)->Render();
-		}
-		for(std::vector<Projectile*>::const_iterator it = mProjectileList.begin(); it != mProjectileList.end();++it)
-		{
-			(*it)->Render();
-		}
+		RenderVector< std::vector<Projectile*> >(mPlayerProjectiles);
+		RenderVector< std::vector<Projectile*> >(mProjectileList);
 
-		for(std::vector<Actor*>::const_iterator it = mActorList.begin(); it != mActorList.end();++it)
-		{
-			(*it)->Render();
-		}
+		// draw enemy
+		RenderVector< std::vector<Actor*> >(mActorList);
 	}
 
 	// draw screens / UI
@@ -107,6 +125,7 @@ void Game::Update()
 	InputManager::Instance().UpdatePosition();
 
 	// update UI
+	
 	for(std::vector<Screen*>::const_iterator it = mActiveScreens.begin(); it != mActiveScreens.end();++it)
 	{
 		(*it)->Update();
@@ -118,10 +137,8 @@ void Game::Update()
 	mPlayer.Update();
 
 	// update actor
-	for(std::vector<Actor*>::iterator it = mActorList.begin(); it != mActorList.end();++it)
-	{
-		(*it)->Update();
-	}
+	UpdateVector< std::vector<Actor*> >(mActorList);
+
 	// process actor queue
 	for(std::vector<Actor*>::iterator it = mActorQueue.begin(); it != mActorQueue.end();++it)
 	{
@@ -130,10 +147,8 @@ void Game::Update()
 	mActorQueue.clear();
 
 	// update effects
-	for(std::vector<Effect*>::iterator it = mEffectList.begin(); it != mEffectList.end();++it)
-	{
-		(*it)->Update();
-	}
+	UpdateVector< std::vector<Effect*> >(mEffectList);
+
 	// process effect queue
 	for(std::vector<Effect*>::iterator it = mEffectQueue.begin(); it != mEffectQueue.end();++it)
 	{
@@ -279,43 +294,16 @@ void Game::InitGame()
 void Game::EndGame()
 {
 	// remove all actors
-	for(std::vector<Actor*>::iterator it = mActorList.begin(); it != mActorList.end();++it)
-	{
-		delete *it;
-	}
-	mActorList.clear();
-	for(std::vector<Actor*>::iterator it = mActorQueue.begin(); it != mActorQueue.end();++it)
-	{
-		delete *it;
-	}
-	mActorQueue.clear();
+	ClearVector< std::vector<Actor*> >(mActorList);
+	ClearVector< std::vector<Actor*> >(mActorQueue);
+
 	// remove all projectiles
-	for(std::vector<Projectile*>::iterator it = mProjectileList.begin(); it != mProjectileList.end();++it)
-	{
-		delete *it;
-	}
-	mProjectileList.clear();
-	for(std::vector<Projectile*>::iterator it = mPlayerProjectiles.begin(); it != mPlayerProjectiles.end();++it)
-	{
-		delete *it;
-	}
-	mPlayerProjectiles.clear();
-	for(std::vector<Projectile*>::iterator it = mProjectileQueue.begin(); it != mProjectileQueue.end();++it)
-	{
-		delete *it;
-	}
-	mProjectileQueue.clear();
+	ClearVector< std::vector<Projectile*> >(mProjectileList);
+	ClearVector< std::vector<Projectile*> >(mProjectileQueue);
+
 	// remove all effects
-	for(std::vector<Effect*>::iterator it = mEffectList.begin(); it != mEffectList.end();++it)
-	{
-		delete *it;
-	}
-	mEffectList.clear();
-	for(std::vector<Effect*>::iterator it = mEffectQueue.begin(); it != mEffectQueue.end();++it)
-	{
-		delete *it;
-	}
-	mEffectQueue.clear();
+	ClearVector< std::vector<Effect*> >(mEffectList);
+	ClearVector< std::vector<Effect*> >(mEffectQueue);
 }
 
 int Game::GetPlayerHealth() const
